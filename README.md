@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StoryTeller AI App
 
-## Getting Started
+This project is an application that uses GPTScript to create an AI Agent assistant capable of chaining AI tasks together, resulting in the creation of a storybook with beautiful text and images, all from a single initial prompt provided by the AI agent.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🧠 GPTScript Implementation: Learn how to create an AI agent that can perform multiple AI tasks in sequence, building a storybook with impressive text and images.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📺 Real-Time Storybook Creation Process: Watch the storybook creation process in real-time! See the AI agent in action as it constructs the narrative and illustrations.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+💾 Story Storage: Ability to store all previously created stories by writing them to the server, automatically handled by the AI agent.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🚀 Building API Routes: Learn how to build API routes using the app router Route Handler syntax in Next.js.
 
-## Learn More
+🔄 Real-Time Streaming: Implement streaming to showcase the AI agent’s processes in real-time from our API endpoint.
 
-To learn more about Next.js, take a look at the following resources:
+⚡ Next.js Caching: Leverage the power of caching in Next.js to create an optimal and efficient user experience.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🛠 Server & Client Components: Learn when and where to use Next.js Server Components & Client Components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🤖 OpenAI Integration: Integrate OpenAI into the project to power the AI agent.
 
-## Deploy on Vercel
+🎨 Beautiful UI & UX: Create a stunning frontend UI & UX using the popular Shadcn and Tailwind CSS.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔍 TypeScript: Utilize TypeScript to reduce bugs and errors in your code.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🌐 Deploy on Vercel: Learn how to deploy the final build on Vercel.
+
+## Tech Stack
+
+<img alt="Next.js" src="https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
+<img alt="React" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/><img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/>
+ <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
