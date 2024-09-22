@@ -12,12 +12,34 @@ import {
 import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
 
+const storiesPath = 'public/stories'
+
 function StoryWriter() {
 	const [story, setStory] = useState<string>('')
 	const [pages, setPages] = useState<number>()
 	const [progress, setProgress] = useState('')
 	const [runStarted, setRunStarted] = useState<boolean>(false)
 	const [runFinished, setRunFinished] = useState<boolean | null>(null)
+	const [currentTool, setCurrentTool] = useState('')
+
+	async function runScript() {
+		setRunStarted(true)
+		setRunFinished(false)
+
+		const response = await fetch('/api/run-script', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ story, pages, path: storiesPath }),
+		})
+
+		if (response.ok && response.body) {
+			console.log('Streaming started')
+		} else {
+			setRunFinished(true)
+			setRunStarted(false)
+			console.error('Failed to start streaming')
+		}
+	}
 
 	return (
 		<div className="flex flex-col container">
@@ -44,7 +66,12 @@ function StoryWriter() {
 					</SelectContent>
 				</Select>
 
-				<Button disabled={!story || !pages} className="w-full" size="lg">
+				<Button
+					disabled={!story || !pages || runStarted}
+					className="w-full"
+					size="lg"
+					onClick={runScript}
+				>
 					Generate Story
 				</Button>
 			</section>
@@ -54,14 +81,31 @@ function StoryWriter() {
 					<div>
 						{runFinished === null && (
 							<>
-								<p className="animate-pulse">
+								<p className="animate-pulse mr-5">
 									I&lsquo;m waiting for you to Generate a story above...
 								</p>
+								<br />
 							</>
 						)}
 						<span className="mr-5">{'>>'}</span>
 						{progress}
 					</div>
+
+					{currentTool && (
+						<div className="py-10">
+							<span className="mr-5">{'--- [Current Tool] ---'}</span>
+							{currentTool}
+						</div>
+					)}
+
+					{runStarted && (
+						<div>
+							<span className="mr-5 animate-in">
+								{'--- [AI Storyteller Has Started] ---'}
+							</span>
+							<br />
+						</div>
+					)}
 				</div>
 			</section>
 		</div>
